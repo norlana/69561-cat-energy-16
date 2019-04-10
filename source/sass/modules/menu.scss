@@ -1,0 +1,13 @@
+.menu {
+  @include list-reset();
+  @include font-secondary(500, 20px, 20px);
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.menu__link {
+  display: block;
+  padding: 23px 20px 23px;
+  color: $palette-text-secondary;
+  @include shadow-border-top(#e6e6e6);
+}
