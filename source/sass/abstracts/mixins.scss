@@ -1,0 +1,35 @@
+/* stylelint-disable */
+
+// Типографика
+@mixin font-base($size: 14px, $line-height: 18px) {
+  font: 400 #{$size}/#{$line-height} Arial, sans-serif;
+}
+
+@mixin font-secondary($weight: 400, $size: 16px, $line-height: 20px) {
+  font: $weight #{$size}/#{$line-height} Oswald, Arial, sans-serif;
+}
+
+// Сброс стилей списков
+@mixin list-reset() {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+// Обводка блоков
+// Сверху
+@mixin shadow-border-top($stroke-color: #d9d9d9) {
+  box-shadow: inset 0 1px 0 0 $stroke-color;
+}
+
+// Снизу
+@mixin shadow-border-bottom($stroke-color: #d9d9d9) {
+  box-shadow: inset 0 -1px 0 0 $stroke-color;
+}
+
+// Псевдоэлементы
+@mixin pseudo($content: '', $display: block, $pos: absolute) {
+    content: $content;
+    display: $display;
+    position: $pos;
+}
