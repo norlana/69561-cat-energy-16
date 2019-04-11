@@ -1,0 +1,8 @@
+.copyright__link {
+  @include font-base(16px, 16px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  color: $palette-text-base;
+}
