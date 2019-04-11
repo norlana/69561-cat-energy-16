@@ -1,0 +1,10 @@
+.header {
+  width: 100%;
+}
+
+.header__wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid $pc-neutral-darkest;
+}

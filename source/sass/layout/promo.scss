@@ -1,0 +1,33 @@
+.promo {
+  @include font-secondary(400, 14px, 14px);
+  text-align: center;
+  color: $tc-light;
+  margin-bottom: 20px;
+  padding-top: 25px;
+  background: url("../../img/bg-image/index-background-mobile@1x.jpg") no-repeat top center, linear-gradient(to bottom, #63a73a 305px, transparent 305px);
+}
+
+.promo__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  min-height: 450px;
+  border-top: 1px solid transparent;
+}
+
+.promo__title {
+  font-size: 36px;
+  line-height: 36px;
+  font-weight: normal;
+  margin: 0 0 12px 0;
+}
+
+.promo__text {
+  text-transform: uppercase;
+  margin-bottom: 28px;
+}
+
+.promo__image {
+  padding-bottom: 4px;
+}

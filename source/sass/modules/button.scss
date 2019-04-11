@@ -1,0 +1,28 @@
+.button {
+  @include font-secondary(400, 14px, 18px);
+  text-transform: uppercase;
+  text-align: center;
+  display: block;
+  width: 100%;
+  padding: 12px 22px 10px;
+}
+
+.button--accent {
+  background-color: $pc-accent;
+  color: $tc-light;
+
+  &:active {
+    background-color: $pc-accent-darker;
+    color: rgba($tc-light, 0.3);
+  }
+}
+
+.button--faded {
+  background-color: $pc-neutral;
+  color: $tc-base;
+
+  &:active {
+    background-color: $pc-neutral-darker;
+    color: rgba($tc-base, 0.3);
+  }
+}

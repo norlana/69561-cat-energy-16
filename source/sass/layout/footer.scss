@@ -1,0 +1,31 @@
+.footer {
+  width: 100%;
+}
+
+.footer__list {
+  @include list-reset();
+  display: flex;
+  flex-direction: column;
+}
+
+.footer__item {
+  display: flex;
+  justify-content: center;
+  padding: 23px 0 23px;
+  width: 100%;
+}
+
+.footer__item:not(:first-child) {
+  @include shadow-border-top($pc-neutral-darkest);
+}
+
+.footer__logo {
+  @include font-secondary(400, 27.4px, 28px);
+  text-transform: uppercase;
+  letter-spacing: 0.012em;
+  color: $tc-dark;
+
+  &:active {
+    opacity: 0.6;
+  }
+}

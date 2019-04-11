@@ -1,0 +1,28 @@
+.logo {
+  display: flex;
+  align-items: center;
+  padding: 11px 51px 16px 20px;
+
+  &[href]:active {
+    opacity: 0.6;
+  }
+}
+
+.logo__item {
+  display: flex;
+
+  &--image {
+    width: 33px;
+    height: 38px;
+  }
+
+  &--title {
+    @include font-secondary(400, 22px, 22px);
+    display: block;
+    margin: 0 auto;
+    padding-top: 3px;
+    color: $tc-dark;
+    text-transform: uppercase;
+    letter-spacing: 0.012em;
+  }
+}

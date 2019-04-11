@@ -1,0 +1,17 @@
+.menu {
+  @include list-reset();
+  @include font-secondary(500, 20px, 20px);
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.menu__link {
+  @include shadow-border-top($pc-neutral-darkest);
+  display: block;
+  padding: 23px 20px 23px;
+  color: $tc-dark;
+
+  &[href]:active {
+    opacity: 0.3;
+  }
+}
