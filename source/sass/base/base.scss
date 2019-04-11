@@ -12,8 +12,8 @@ body {
   @include font-base;
   min-width: 320px;
   padding: 0;
-  color: $palette-text-base;
-  background-color: $palette-base;
+  color: $tc-base;
+  background-color: $pc-base;
 }
 
 a {

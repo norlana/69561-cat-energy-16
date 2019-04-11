@@ -10,6 +10,10 @@
   &:not(:last-child) {
     margin-right: 38px;
   }
+
+  &:active {
+    opacity: 0.3;
+  }
 }
 
 .social__link--vk {

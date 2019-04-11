@@ -1,7 +1,7 @@
 .page-title {
   @include font-secondary(400, 36px, 60px);
   @include shadow-border-bottom(#ededed);
-  color: $palette-text-secondary;
+  color: $tc-dark;
   padding: 0 20px 30px;
   margin: 0;
 }

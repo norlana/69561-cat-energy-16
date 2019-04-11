@@ -16,12 +16,16 @@
 }
 
 .footer__item:not(:first-child) {
-  @include shadow-border-top(#e6e6e6);
+  @include shadow-border-top($pc-neutral-darkest);
 }
 
 .footer__logo {
   @include font-secondary(400, 27.4px, 28px);
   text-transform: uppercase;
   letter-spacing: 0.012em;
-  color: $palette-text-secondary;
+  color: $tc-dark;
+
+  &:active {
+    opacity: 0.6;
+  }
 }

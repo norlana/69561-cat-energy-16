@@ -27,7 +27,7 @@
 .product__title {
   @include font-secondary(400, 16px, 20px);
   padding-right: 60px;
-  color: $palette-text-secondary;
+  color: $tc-dark;
   margin-bottom: 13px;
 
   &--show-all {

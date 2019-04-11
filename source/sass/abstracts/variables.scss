@@ -1,17 +1,23 @@
 // Внутренние переменные ($variable-inner -> $vi)
 $vi-color-white: #ffffff;
 $vi-color-green: #68b738;
+$vi-color-green-darker: #5eaa2f;
 $vi-color-gray: #f2f2f2;
+$vi-color-darker-gray:#ebebeb;
+$vi-color-darkest-gray: #e6e6e6;
 $vi-color-black-medium: #444444;
 $vi-color-black-ultra: #111111;
-$vi-color-light-gray: #e6e6e6;
 
 // Глобальные переменные
+// Цветовая палитра сайта ($page-color -> $pc)
+$pc-base: $vi-color-white;
+$pc-neutral: $vi-color-gray;
+$pc-neutral-darker: $vi-color-darker-gray;
+$pc-neutral-darkest: $vi-color-darkest-gray;
+$pc-accent: $vi-color-green;
+$pc-accent-darker: $vi-color-green-darker;
 
-// Цветовая палитра сайта ($palette)
-$palette-base: $vi-color-white;
-$palette-accent: $vi-color-green;
-$palette-accent-secondary: $vi-color-gray;
-$palette-text-base: $vi-color-black-medium;
-$palette-text-secondary: $vi-color-black-ultra;
-// $palette-additional: $vi-color-light-gray;
+// Цвет текста ($text-color -> $tc)
+$tc-base: $vi-color-black-medium;
+$tc-dark: $vi-color-black-ultra;
+$tc-light: $vi-color-white;

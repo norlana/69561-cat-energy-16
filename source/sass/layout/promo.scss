@@ -1,7 +1,7 @@
 .promo {
   @include font-secondary(400, 14px, 14px);
   text-align: center;
-  color: $palette-base;
+  color: $tc-light;
   margin-bottom: 20px;
   padding-top: 25px;
   background: url("../../img/bg-image/index-background-mobile@1x.jpg") no-repeat top center, linear-gradient(to bottom, #63a73a 305px, transparent 305px);

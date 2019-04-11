@@ -4,5 +4,15 @@
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  color: $palette-text-base;
+  color: $tc-base;
+
+  &:active {
+    opacity: 0.3;
+  }
+}
+
+.copyright__logo {
+  width: 27px;
+  height: 34px;
+  fill: #666666;
 }
