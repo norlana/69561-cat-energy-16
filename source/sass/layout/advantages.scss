@@ -1,22 +1,49 @@
 .advantages {
+  @include container(mobile);
   margin-bottom: 40px;
+
+  @include breakpoint(tablet) {
+    @include container(tablet);
+    margin: 0 auto;
+  }
 }
 
 .advantages__title {
   @include font-secondary(400, 36px, 60px);
   margin-top: 0;
   color: $tc-dark;
+
+  @include breakpoint(tablet) {
+    @include change-font-prop(0, 60px, 60px);
+    margin-bottom: 70px;
+  }
 }
 
 .advantages__list {
   @include list-reset();
   display: flex;
   flex-direction: column;
+
+  @include breakpoint(tablet) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
 }
 
 .advantages__item {
   position: relative;
   padding: 0 0 30px 80px;
+  z-index: 1;
+
+  @include breakpoint(tablet) {
+    @include change-font-prop(0, 16px, 24px);
+    display: flex;
+    flex-shrink: 0;
+    width: calc(50% - 30px);
+    padding: 115px 70px 40px 0;
+    margin-bottom: 100px;
+  }
 
   &::before {
     @include pseudo();
@@ -25,7 +52,13 @@
     width: 60px;
     height: 60px;
     background-color: $pc-accent;
+    background-repeat: no-repeat;
     background-position: 50%;
+
+    @include breakpoint(tablet) {
+      width: 80px;
+      height: 80px;
+    }
   }
 
   &--healthy::before {
@@ -42,5 +75,16 @@
 
   &--fast::before {
     background-image: url("../../img/advantages/advantage-clock@1x.png");
+  }
+
+  &::after {
+    @include breakpoint(tablet) {
+      @include pseudo(attr(data-content));
+      @include font-secondary(400, 281px, 281px);
+      top: -45px;
+      right: 90px;
+      color: $pc-neutral;
+      z-index: -1;
+    }
   }
 }

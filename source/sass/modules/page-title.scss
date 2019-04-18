@@ -1,7 +1,16 @@
 .page-title {
   @include font-secondary(400, 36px, 60px);
-  @include shadow-border-bottom(#ededed);
+  @include shadow-border-bottom($color: $pc-neutral-darkest);
+  text-align: left;
   color: $tc-dark;
   padding: 0 20px 30px;
   margin: 0;
+
+  @include breakpoint(tablet) {
+    @include change-font-prop(0, 60px, 0);
+    padding: 0 30px 45px;
+    width: 768px;
+    margin: 0 auto;
+    box-shadow: none;
+  }
 }

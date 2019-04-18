@@ -3,6 +3,22 @@
   @include font-secondary(500, 20px, 20px);
   text-transform: uppercase;
   text-align: center;
+
+  @include breakpoint(tablet) {
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 17px;
+
+    @include font-secondary(400, 18px, 25px);
+  }
+}
+
+// Селектор "лоботомированная сова": * + *. Позволяет задавать отступы
+// соседним элементам без обнуления отступов для последнего элемента.
+.menu__item + .menu__item {
+  @include breakpoint(tablet) {
+    margin-left: 36px;
+  }
 }
 
 .menu__link {
@@ -11,7 +27,18 @@
   padding: 23px 20px 23px;
   color: $tc-dark;
 
+  @include breakpoint(tablet) {
+    box-shadow: none;
+    padding: 0 0 14px;
+  }
+
   &[href]:active {
     opacity: 0.3;
+  }
+}
+
+.menu__link--current {
+  @include breakpoint(tablet) {
+    @include shadow-border-bottom(-2px, $pc-accent);
   }
 }

@@ -20,16 +20,31 @@
   width: 22px;
   height: 12px;
   background: url("../../img/icons-svg/icon-vk-mobile.svg") no-repeat;
+
+  @include breakpoint(tablet) {
+    width: 30px;
+    height: 16px;
+  }
 }
 
 .social__link--insta {
   width: 16px;
   height: 16px;
   background: url("../../img/icons-svg/icon-insta-mobile.svg") no-repeat;
+
+  @include breakpoint(tablet) {
+    width: 23px;
+    height: 23px;
+  }
 }
 
 .social__link--fb {
   width: 10px;
   height: 19px;
   background: url("../../img/icons-svg/icon-fb-mobile.svg") no-repeat;
+
+  @include breakpoint(tablet) {
+    width: 14px;
+    height: 28px;
+  }
 }

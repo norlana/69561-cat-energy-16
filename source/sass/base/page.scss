@@ -1,0 +1,7 @@
+.page--index {
+  @include breakpoint(desktop) {
+    background: url("../../img/bg-image/index-background-desktop@1x.jpg") no-repeat, linear-gradient(to right, $pc-accent-darkest 50%, $pc-accent-darkest 50%) no-repeat;
+    background-position: top right, 100% 0;
+    background-size: 720px 696px, 100% 696px;
+  }
+}

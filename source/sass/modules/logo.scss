@@ -3,26 +3,46 @@
   align-items: center;
   padding: 11px 51px 16px 20px;
 
+  @include breakpoint(tablet) {
+    width: 185px;
+    padding: 0;
+    justify-content: space-between;
+
+    // Временно для няглядности
+    &::before {
+      @include pseudo($pos: static);
+      width: 173px;
+      height: 58px;
+      background-image: url("../../img/header/logo-tablet.svg");
+    }
+  }
+
   &[href]:active {
     opacity: 0.6;
   }
 }
 
-.logo__item {
+.logo__item--image {
   display: flex;
+  width: 33px;
+  height: 38px;
 
-  &--image {
-    width: 33px;
-    height: 38px;
+  // Временно для наглядности
+  @include breakpoint(tablet) {
+    display: none;
   }
+}
 
-  &--title {
-    @include font-secondary(400, 22px, 22px);
-    display: block;
-    margin: 0 auto;
-    padding-top: 3px;
-    color: $tc-dark;
-    text-transform: uppercase;
-    letter-spacing: 0.012em;
+.logo__item--title {
+  @include font-secondary(400, 22px, 22px);
+  display: block;
+  margin: 0 auto;
+  padding-top: 3px;
+  color: $tc-dark;
+  text-transform: uppercase;
+  letter-spacing: 0.012em;
+
+  @include breakpoint(tablet) {
+    display: none;
   }
 }

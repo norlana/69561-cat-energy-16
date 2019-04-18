@@ -5,29 +5,74 @@
   margin-bottom: 20px;
   padding-top: 25px;
   background: url("../../img/bg-image/index-background-mobile@1x.jpg") no-repeat top center, linear-gradient(to bottom, #63a73a 305px, transparent 305px);
+
+  @include breakpoint(tablet) {
+    @include font-secondary(400, 20px, 20px);
+    color: $tc-dark;
+    background-color: $pc-base;
+    background-image: none;
+  }
 }
 
 .promo__container {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: center;
-  min-height: 450px;
-  border-top: 1px solid transparent;
+  @include container(mobile);
+
+  @include breakpoint(tablet) {
+    @include container(tablet);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    z-index: 1;
+    min-height: 550px;
+  }
+}
+
+.promo__description {
+  min-height: 120px;
+
+  @include breakpoint(tablet) {
+    max-width: 420px;
+    text-align: left;
+    margin: 0 0 45px 90px;
+  }
 }
 
 .promo__title {
-  font-size: 36px;
-  line-height: 36px;
-  font-weight: normal;
-  margin: 0 0 12px 0;
+  @include change-font-prop(400, 36px, 36px);
+
+  @include breakpoint(tablet) {
+    @include change-font-prop(400, 60px, 60px);
+    margin-bottom: 45px;
+  }
 }
 
 .promo__text {
   text-transform: uppercase;
-  margin-bottom: 28px;
+  margin: 0;
+
+  @include breakpoint(tablet) {
+    @include change-font-prop(400, 20px, 20px);
+  }
 }
 
 .promo__image {
   padding-bottom: 4px;
+
+  @include breakpoint(tablet) {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    margin-left: -140px;
+    order: 3;
+    z-index: -1;
+  }
+}
+
+.promo__button {
+  @include breakpoint(tablet) {
+    padding: 15px 27px;
+    width: 245px;
+    margin: 0 0 45px 90px;
+  }
 }

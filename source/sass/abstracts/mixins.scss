@@ -1,12 +1,31 @@
 /* stylelint-disable */
 
 // Типографика
-@mixin font-base($size: 14px, $line-height: 18px) {
-  font: 400 #{$size}/#{$line-height} Arial, sans-serif;
+@mixin font-base($weight: 400, $size: 14px, $line-height: 18px) {
+  font: $weight #{$size}/#{$line-height} Arial, sans-serif;
 }
 
 @mixin font-secondary($weight: 400, $size: 16px, $line-height: 20px) {
   font: $weight #{$size}/#{$line-height} Oswald, Arial, sans-serif;
+}
+
+// Изменить некоторые свойства текста
+@mixin f-size($fsz) {
+  @if $fsz != 0 {font-size: $fsz;}
+}
+
+@mixin f-weight($fwt) {
+  @if $fwt != 0 {font-weight: $fwt;}
+}
+
+@mixin l-height($lht) {
+  @if $lht != 0 {line-height: $lht;}
+}
+
+@mixin change-font-prop($fwt, $fsz, $lht) {
+  @include f-weight($fwt);
+  @include f-size($fsz);
+  @include l-height($lht);
 }
 
 // Сброс стилей списков
@@ -16,15 +35,27 @@
   list-style: none;
 }
 
+// Центровщик
+@mixin container($point) {
+  @if $point == mobile {
+    width: auto;
+    padding: 0 20px;
+  }
+  @else if $point == tablet {
+    width: 768px;
+    padding: 0 30px;
+  }
+}
+
 // Обводка блоков
 // Сверху
-@mixin shadow-border-top($stroke-color: #d9d9d9) {
-  box-shadow: inset 0 1px 0 0 $stroke-color;
+@mixin shadow-border-top($color: #d9d9d9) {
+  box-shadow: inset 0 1px 0 0 $color;
 }
 
 // Снизу
-@mixin shadow-border-bottom($stroke-color: #d9d9d9) {
-  box-shadow: inset 0 -1px 0 0 $stroke-color;
+@mixin shadow-border-bottom($y: -1px, $color: #d9d9d9) {
+  box-shadow: inset 0 $y 0 0 $color;
 }
 
 // Псевдоэлементы
@@ -32,4 +63,26 @@
     content: $content;
     display: $display;
     position: $pos;
+}
+
+// Брейкпоинты
+@mixin breakpoint($point) {
+  @if $point == desktop {
+    @media (min-width: 1300px) { @content; }
+  }
+  @else if $point == tablet {
+    @media (min-width: 768px) { @content; }
+  }
+  @else if $point == mobile {
+    @media (min-width: 320px)  { @content; }
+  }
+}
+
+// Брейкпоинты диапазон
+@mixin breakpoint-range($point-min, $point-max) {
+  @media (min-width: $point-min) {
+    @media (max-width: $point-max) {
+      @content;
+    }
+  }
 }

@@ -1,3 +1,10 @@
+.copyright {
+  @include breakpoint(tablet) {
+    // width: 162px;
+    justify-content: flex-end;
+  }
+}
+
 .copyright__link {
   @include font-base(16px, 16px);
   display: flex;
@@ -9,10 +16,18 @@
   &:active {
     opacity: 0.3;
   }
+
+  @include breakpoint(tablet) {
+    justify-content: flex-end;
+  }
 }
 
 .copyright__logo {
   width: 27px;
   height: 34px;
   fill: #666666;
+
+  @include breakpoint(tablet) {
+    margin-left: 24px;
+  }
 }

@@ -1,0 +1,5 @@
+.brand {
+  @include breakpoint(tablet) {
+    justify-content: flex-start;
+  }
+}

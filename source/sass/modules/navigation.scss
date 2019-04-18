@@ -20,25 +20,8 @@
   user-select: none;
   z-index: 2;
 
-  &--close {
-    > .navigation__toggle-bar {
-      background-color: transparent;
-      transition: background-color 0.3s 0s;
-
-      &::before,
-      &::after {
-        top: 0;
-        transition: top 0.3s, transform 0.3s 0.3s;
-      }
-
-      &::before {
-        transform: rotate(45deg);
-      }
-
-      &::after {
-        transform: rotate(-45deg);
-      }
-    }
+  @include breakpoint(tablet) {
+    display: none;
   }
 }
 
@@ -68,5 +51,24 @@
 
   &::after {
     top: -8px;
+  }
+}
+
+.navigation__toggle--close .navigation__toggle-bar {
+  background-color: transparent;
+  transition: background-color 0.3s 0s;
+
+  &::before,
+  &::after {
+    top: 0;
+    transition: top 0.3s, transform 0.3s 0.3s;
+  }
+
+  &::before {
+    transform: rotate(45deg);
+  }
+
+  &::after {
+    transform: rotate(-45deg);
   }
 }
