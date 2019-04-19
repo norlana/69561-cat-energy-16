@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>HTML Academy: Кэт энерджи</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body class="page">
@@ -18,7 +19,7 @@
           </button>
           <ul class="navigation__list menu">
             <li class="menu__item">
-              <a class="menu__link">Главная</a>
+              <a class="menu__link menu__link--current">Главная</a>
             </li>
             <li class="menu__item">
               <a class="menu__link" href="catalog.html">Каталог продукции</a>
@@ -32,14 +33,16 @@
     </header>
     <main class="main">
       <section class="promo">
-        <div class="promo__container container">
-          <h1 class="promo__title">Функциональное питание для котов</h1>
-          <p class="promo__text">Занялся собой? Займись котом!</p>
+        <div class="promo__container">
+          <div class="promo__description">
+            <h1 class="promo__title">Функциональное питание для котов</h1>
+            <p class="promo__text">Занялся собой? Займись котом!</p>
+          </div>
           <img class="promo__image" src="img/promo/index-can-mobile@1x.png" width="280" height="270" alt="Кошачий корм для набора массы Cat Energy Pro со вкусом курицы">
           <a class="promo__button button button--accent" href="form.html">Подобрать программу</a>
         </div>
       </section>
-      <section class="diets container">
+      <section class="diets">
         <h2 class="visually-hidden">Выбор программы питания</h2>
         <div class="diets__wrapper">
           <article class="diet diet--weight-reduce">
@@ -58,19 +61,19 @@
           </article>
         </div>
       </section>
-      <section class="advantages container">
+      <section class="advantages">
         <h2 class="advantages__title">Как это работает</h2>
         <ul class="advantages__list">
-          <li class="advantages__item advantages__item--healthy">Функциональное питание содержит только полезные питательные вещества.</li>
-          <li class="advantages__item advantages__item--simple">Выпускается в виде порошка, который нужно лишь залить кипятком и готово.</li>
-          <li class="advantages__item advantages__item--daily">Замените один-два приема обычной еды на наше фунцкциональное питание.</li>
-          <li class="advantages__item advantages__item--fast">Уже через месяц наслаждайтесь изменениями к лучшему вашего питомца!</li>
+          <li class="advantages__item advantages__item--healthy" data-content="1">Функциональное питание содержит только полезные питательные вещества.</li>
+          <li class="advantages__item advantages__item--simple" data-content="2">Выпускается в виде порошка, который нужно лишь залить кипятком и готово.</li>
+          <li class="advantages__item advantages__item--daily" data-content="3">Замените один-два приема обычной еды на наше фунцкциональное питание.</li>
+          <li class="advantages__item advantages__item--fast" data-content="4">Уже через месяц наслаждайтесь изменениями к лучшему вашего питомца!</li>
         </ul>
       </section>
     </main>
-    <footer class="footer container">
+    <footer class="footer">
       <ul class="footer__list">
-        <li class="footer__item">
+        <li class="footer__item brand">
           <a class="footer__logo"><b>Cat</b> Energy</a>
         </li>
         <li class="footer__item social">

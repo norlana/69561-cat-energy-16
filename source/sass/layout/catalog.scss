@@ -1,0 +1,11 @@
+.catalog {
+  @include container(mobile);
+
+  @include breakpoint(tablet) {
+    @include container(tablet);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0 auto;
+  }
+}

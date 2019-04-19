@@ -5,6 +5,10 @@
   display: block;
   width: 100%;
   padding: 12px 22px 10px;
+
+  @include breakpoint(tablet) {
+    @include change-font-prop(0, 20px, 20px);
+  }
 }
 
 .button--accent {

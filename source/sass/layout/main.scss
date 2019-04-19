@@ -1,3 +1,7 @@
 .main--catalog {
   padding-top: 20px;
+
+  @include breakpoint(tablet) {
+    padding-top: 60px;
+  }
 }
