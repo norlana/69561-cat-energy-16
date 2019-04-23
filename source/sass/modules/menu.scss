@@ -1,5 +1,5 @@
 .menu {
-  @include list-reset();
+  @include list-reset;
   @include font-secondary(500, 20px, 20px);
   text-transform: uppercase;
   text-align: center;
@@ -9,15 +9,17 @@
     justify-content: flex-end;
     padding-top: 17px;
 
-    @include font-secondary(400, 18px, 25px);
+    @include change-font-prop(400, 18px, 25px);
+  }
+
+  @include breakpoint(desktop) {
+    @include change-font-prop(400, 20px, 25px);
   }
 }
 
-// Селектор "лоботомированная сова": * + *. Позволяет задавать отступы
-// соседним элементам без обнуления отступов для последнего элемента.
 .menu__item + .menu__item {
   @include breakpoint(tablet) {
-    margin-left: 36px;
+    margin-left: 38px;
   }
 }
 
@@ -37,8 +39,20 @@
   }
 }
 
+.page--index .menu__link {
+  @include breakpoint(desktop) {
+    color: $tc-light;
+  }
+}
+
 .menu__link--current {
   @include breakpoint(tablet) {
     @include shadow-border-bottom(-2px, $pc-accent);
+  }
+}
+
+.page--index .menu__link--current {
+  @include breakpoint(desktop) {
+    @include shadow-border-bottom(-2px, $pc-base);
   }
 }

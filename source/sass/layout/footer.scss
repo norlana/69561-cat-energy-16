@@ -3,22 +3,25 @@
   background-color: $pc-neutral;
 
   @include breakpoint(tablet) {
-    padding: 58px 0;
+    padding: 35px 0;
   }
 }
 
 .footer__list {
-  @include list-reset();
+  @include list-reset;
   display: flex;
   flex-direction: column;
 
-  @include breakpoint(tablet) {
-    @include container(tablet);
-    margin: 0 auto;
+  @include container(tablet, true) {
     flex-direction: row;
     justify-content: space-between;
+    padding: $tab-pad;
 
     @include change-font-prop(0, 16px, 16px);
+  }
+
+  @include container(desktop, false) {
+    padding: $desk-pad;
   }
 }
 
@@ -26,7 +29,11 @@
   display: flex;
   justify-content: center;
   padding: 23px 20px 23px;
-  width: 100%;
+  flex-basis: 100%;
+
+  @include breakpoint(tablet) {
+    padding: 23px 0;
+  }
 }
 
 .footer__item:not(:first-child) {

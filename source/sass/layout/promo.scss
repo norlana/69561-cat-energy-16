@@ -2,9 +2,10 @@
   @include font-secondary(400, 14px, 14px);
   text-align: center;
   color: $tc-light;
-  margin-bottom: 20px;
-  padding-top: 25px;
-  background: url("../../img/bg-image/index-background-mobile@1x.jpg") no-repeat top center, linear-gradient(to bottom, #63a73a 305px, transparent 305px);
+  margin-bottom: 60px;
+  padding-top: 10px;
+  background: url("../img/bg-image/index-background-mobile@1x.jpg") no-repeat, linear-gradient(to bottom, #63a73a 305px, transparent 305px) no-repeat;
+  background-position: center top, 0 0;
 
   @include breakpoint(tablet) {
     @include font-secondary(400, 20px, 20px);
@@ -12,29 +13,45 @@
     background-color: $pc-base;
     background-image: none;
   }
+
+  @include breakpoint(desktop) {
+    padding-top: 66px;
+    background: linear-gradient(to right, $pc-base 50%, transparent 50%);
+  }
 }
 
 .promo__container {
-  @include container(mobile);
+  @include container(mobile, false) {
+    padding: $mob-pad;
+  }
 
-  @include breakpoint(tablet) {
-    @include container(tablet);
+  @include container(tablet, true) {
     position: relative;
     display: flex;
     flex-direction: column;
-    margin: 0 auto;
+    padding: $tab-pad;
     z-index: 1;
     min-height: 550px;
+  }
+
+  @include container(desktop, false) {
+    flex-direction: row;
+    padding: $desk-pad;
   }
 }
 
 .promo__description {
   min-height: 120px;
+  margin-bottom: 15px;
 
   @include breakpoint(tablet) {
     max-width: 420px;
     text-align: left;
     margin: 0 0 45px 90px;
+  }
+
+  @include breakpoint(desktop) {
+    margin: 0 0 0 82px;
   }
 }
 
@@ -74,5 +91,12 @@
     padding: 15px 27px;
     width: 245px;
     margin: 0 0 45px 90px;
+  }
+
+  @include breakpoint(desktop) {
+    position: absolute;
+    top: 270px;
+    left: 123px;
+    margin: 0;
   }
 }

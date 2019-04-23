@@ -1,16 +1,24 @@
 .diet {
+  position: relative;
   background-color: $pc-neutral;
   margin-bottom: 15px;
-  padding: 0 35px 20px 20px;
+  padding: 0 20px 20px;
 
   @include breakpoint(tablet) {
-    padding: 0 35px 60px 54px;
+    margin-bottom: 32px;
+    padding-bottom: 60px;
+    padding-left: 54px;
+  }
+
+  @include breakpoint(desktop) {
+    flex-basis: 570px;
+    padding-bottom: 55px;
+    padding-right: 54px;
   }
 }
 
 .diet__title {
   @include font-secondary(400, 24px, 37px);
-  position: relative;
   text-transform: uppercase;
   color: $tc-dark;
   margin: 38px 0;
@@ -18,38 +26,49 @@
 
   @include breakpoint(tablet) {
     padding-left: 0;
-    margin: 80px 0 30px;
+    margin: 75px 0 30px;
+
+    @include change-font-prop(0, 36px, 37px);
+  }
+
+  @include breakpoint(desktop) {
+    margin-bottom: 75px;
+    padding-left: 164px;
   }
 
   &::before {
-    @include pseudo();
-    top: -15px;
-    left: -10px;
+    @include pseudo;
+    top: 20px;
+
+    @media (max-width: 767px) {
+      left: 10px;
+    }
     width: 70px;
     height: 70px;
     padding: 10px;
     border-radius: 50%;
 
     @include breakpoint(tablet) {
-      top: -20px;
-      left: 360px;
+      @media (max-width: 1299px) {
+        top: 30px;
+        right: 30px;
+      }
       width: 270px;
       height: 270px;
       padding: 35px;
     }
-  }
 
-  @include breakpoint(tablet) {
-    @include change-font-prop(0, 36px, 37px);
+    @include breakpoint(desktop) {
+      left: 30px;
+      width: 140px;
+      height: 140px;
+      padding: 20px;
+    }
   }
 }
 
-// Для создания фона в виде цветного круга был создан псевдо-градиент.
-// Это позволило применить ко множественному фону background-clip свойство с разными значениями.
-// Таким образом получилась составная иконка без участия еще одного псевдоэлемента.
-
 .diet--weight-reduce .diet__title::before {
-  background: url("../../img/icons-svg/icon-cat-slim.svg") no-repeat, linear-gradient(to bottom, $pc-accent 50%, $pc-accent 50%) no-repeat;
+  background: url("../img/icons-svg/icon-cat-slim.svg") no-repeat, linear-gradient(to bottom, $pc-accent 50%, $pc-accent 50%) no-repeat;
   background-clip: padding-box, content-box;
   background-size: 35px 49px, cover;
   background-position: 50% 33%, 0 0;
@@ -57,10 +76,14 @@
   @include breakpoint(tablet) {
     background-size: 140px 194px, cover;
   }
+
+  @include breakpoint(desktop) {
+    background-size: 70px 97px, cover;
+  }
 }
 
 .diet--weight-add .diet__title::before {
-  background: url("../../img/icons-svg/icon-cat-pro.svg") no-repeat, linear-gradient(to bottom, $pc-accent 50%, $pc-accent 50%) no-repeat;
+  background: url("../img/icons-svg/icon-cat-pro.svg") no-repeat, linear-gradient(to bottom, $pc-accent 50%, $pc-accent 50%) no-repeat;
   background-clip: padding-box, content-box;
   background-size: 67px 28px, cover;
   background-position: 10% 50%, 0 0;
@@ -68,23 +91,41 @@
   @include breakpoint(tablet) {
     background-size: 268px 112px, cover;
   }
+
+  @include breakpoint(desktop) {
+    background-size: 134px 56px, cover;
+  }
 }
 
 .diet__text {
-  @include shadow-border-bottom();
-  padding-bottom: 20px;
+  @include shadow-border-bottom;
+  margin: 0 0 20px 0;
+  padding: 0 38% 20px 0;
+
+  @media (max-width: 470px) {
+    padding: 0 0 20px 0;
+  }
 
   @include breakpoint(tablet) {
     @include change-font-prop(0, 16px, 24px);
-    padding-right: 240px;
+    margin: 0 0 60px 0;
+    padding: 0 41% 0 0;
     box-shadow: none;
-    padding-bottom: 60px;
+  }
+
+  @include breakpoint(desktop) {
+    padding: 0;
+    margin: 0 0 35px 0;
   }
 }
 
 .diet--weight-add .diet__text {
   @include breakpoint(tablet) {
-    padding-right: 275px;
+    padding-right: 46%;
+  }
+
+  @include breakpoint(desktop) {
+    padding-right: 0;
   }
 }
 
@@ -95,13 +136,18 @@
   text-transform: uppercase;
   color: $tc-dark;
 
+  @include breakpoint(tablet) {
+    @include change-font-prop(0, 20px, 20px);
+    padding-right: 48px;
+  }
+
   &::after {
-    @include pseudo();
+    @include pseudo;
     top: 30%;
     right: 0;
     width: 24px;
     height: 11px;
-    background: url("../../img/icons-svg/icon-right-arrow-long.svg") no-repeat;
+    background: url("../img/icons-svg/icon-right-arrow-long.svg") no-repeat;
 
     @include breakpoint(tablet) {
       top: 33%;
@@ -110,10 +156,5 @@
 
   &:active {
     opacity: 0.3;
-  }
-
-  @include breakpoint(tablet) {
-    @include change-font-prop(0, 20px, 20px);
-    padding-right: 48px;
   }
 }

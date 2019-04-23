@@ -2,6 +2,10 @@
   padding-top: 20px;
 
   @include breakpoint(tablet) {
-    padding-top: 60px;
+    padding-top: 65px;
+  }
+
+  @include breakpoint(desktop) {
+    padding-top: 80px;
   }
 }

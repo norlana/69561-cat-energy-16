@@ -1,10 +1,15 @@
 .advantages {
-  @include container(mobile);
-  margin-bottom: 40px;
+  @include container(mobile, false) {
+    padding: $mob-pad;
+    margin-bottom: 40px;
+  }
 
-  @include breakpoint(tablet) {
-    @include container(tablet);
-    margin: 0 auto;
+  @include container(tablet, true) {
+    padding: $tab-pad;
+  }
+
+  @include container(desktop, false) {
+    padding: $desk-pad;
   }
 }
 
@@ -15,39 +20,65 @@
 
   @include breakpoint(tablet) {
     @include change-font-prop(0, 60px, 60px);
-    margin-bottom: 70px;
+    margin-bottom: 62px;
   }
 }
 
 .advantages__list {
-  @include list-reset();
+  @include list-reset;
   display: flex;
   flex-direction: column;
 
   @include breakpoint(tablet) {
     flex-direction: row;
+    justify-content: flex-start;
     flex-wrap: wrap;
-    justify-content: space-between;
+
+    @media (max-width: 1299px) {
+      padding-right: calc(100% - 87%);
+      min-width: 620px;
+      max-width: 850px;
+    }
+  }
+
+  @include breakpoint(desktop) {
+    margin-left: -80px;
   }
 }
 
 .advantages__item {
   position: relative;
-  padding: 0 0 30px 80px;
+  padding: 0 35% 0 80px;
+  min-height: 60px;
+  margin-bottom: 20px;
+
+  @media (max-width: 600px) {
+    padding: 0 25% 0 80px;
+  }
+
+  @media (max-width: 470px) {
+    padding: 0 0 0 80px;
+  }
   z-index: 1;
 
   @include breakpoint(tablet) {
     @include change-font-prop(0, 16px, 24px);
     display: flex;
     flex-shrink: 0;
-    width: calc(50% - 30px);
-    padding: 115px 70px 40px 0;
-    margin-bottom: 100px;
+    flex-basis: 250px;
+    padding: 115px 5px 80px 0;
+    margin-bottom: 60px;
+  }
+
+  @include breakpoint(desktop) {
+    flex-basis: 245px;
+    margin-left: 80px;
+    padding-right: 0;
   }
 
   &::before {
-    @include pseudo();
-    top: -3px;
+    @include pseudo;
+    top: 0;
     left: 0;
     width: 60px;
     height: 60px;
@@ -62,29 +93,41 @@
   }
 
   &--healthy::before {
-    background-image: url("../../img/advantages/advantage-leaf@1x.png");
+    background-image: url("../img/advantages/advantage-leaf@1x.png");
   }
 
   &--simple::before {
-    background-image: url("../../img/advantages/advantage-powder@1x.png");
+    background-image: url("../img/advantages/advantage-powder@1x.png");
   }
 
   &--daily::before {
-    background-image: url("../../img/advantages/advantage-dining@1x.png");
+    background-image: url("../img/advantages/advantage-dining@1x.png");
   }
 
   &--fast::before {
-    background-image: url("../../img/advantages/advantage-clock@1x.png");
+    background-image: url("../img/advantages/advantage-clock@1x.png");
   }
 
   &::after {
     @include breakpoint(tablet) {
       @include pseudo(attr(data-content));
-      @include font-secondary(400, 281px, 281px);
-      top: -45px;
-      right: 90px;
+      @include font-secondary(400, 282px, 282px);
+      top: -40px;
+      right: 0;
       color: $pc-neutral;
       z-index: -1;
+    }
+  }
+
+  &--healthy::after {
+    right: 20px;
+  }
+}
+
+.advantages__item:nth-child(2n+1) {
+  @include breakpoint(tablet) {
+    @media (max-width: 1299px) {
+      margin-right: auto;
     }
   }
 }
