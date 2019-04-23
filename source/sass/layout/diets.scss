@@ -1,13 +1,25 @@
 .diets {
-  @include container(modile);
+  @include container(mobile, false) {
+    padding: $mob-pad;
+  }
 
-  @include breakpoint(tablet) {
-    @include container(tablet)
-      margin: 0 auto 50px;
+  @include container(tablet, false) {
+    padding: $tab-pad;
+    margin: 0 auto 50px;
+  }
+
+  @include container(desktop, false) {
+    padding: $desk-pad;
+    margin-bottom: 80px;
   }
 }
 
 .diets__wrapper {
   display: flex;
   flex-direction: column;
+
+  @include breakpoint(desktop) {
+    flex-direction: row;
+    justify-content: space-between;
+  }
 }

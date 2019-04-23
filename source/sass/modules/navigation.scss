@@ -1,6 +1,10 @@
 .navigation {
   background-color: $pc-base;
   width: 100%;
+
+  @include breakpoint(desktop) {
+    background-color: transparent;
+  }
 }
 
 .navigation__toggle {

@@ -1,8 +1,8 @@
 /* stylelint-disable */
 
 // Типографика
-@mixin font-base($weight: 400, $size: 14px, $line-height: 18px) {
-  font: $weight #{$size}/#{$line-height} Arial, sans-serif;
+@mixin font-base($size: 14px, $line-height: 18px) {
+  font: 400 #{$size}/#{$line-height} Arial, sans-serif;
 }
 
 @mixin font-secondary($weight: 400, $size: 16px, $line-height: 20px) {
@@ -36,7 +36,7 @@
 }
 
 // Центровщик
-@mixin container($point) {
+/* @mixin container($point) {
   @if $point == mobile {
     width: auto;
     padding: 0 20px;
@@ -44,6 +44,91 @@
   @else if $point == tablet {
     width: 768px;
     padding: 0 30px;
+  }
+  @else if $point == desktop {
+    width: 1300px;
+    padding: 0 40px;
+  }
+} */
+
+/* @mixin container($point) {
+  @if $point == mobile {
+    width: 100%;
+    padding: 0 20px;
+  }
+  @else if $point == tablet {
+    @media (min-width: 768px) {
+      width: 768px;
+      padding: 0 30px;
+      margin: 0 auto;
+      @content;
+    }
+  }
+  @else if $point == desktop {
+    @media (min-width: 1300px) {
+      width: 1300px;
+      padding: 0 40px;
+      @content;
+    }
+  }
+} */
+
+/* @mixin container($point, $auto, $mrt: 0, $mrb: 0) {
+  @if $point == mobile {
+    width: 100%;
+    padding: 0 20px;
+    @content;
+  }
+  @else if $point == tablet {
+    @media (min-width: 768px) {
+      width: 768px;
+      padding: 0 30px;
+      @if $auto == true and ($mrt != 0 or $mrb != 0) {
+        margin: $mrt auto $mrb;
+      }
+      @else if $auto == true {
+        margin: 0 auto;
+      }
+      @content;
+    }
+  }
+  @else if $point == desktop {
+    @media (min-width: 1300px) {
+      width: 1300px;
+      padding: 0 40px;
+      @if $auto == true and ($mrt != 0 or $mrb != 0) {
+        margin: $mrt auto $mrb;
+      }
+      @else if $auto == true {
+        margin: 0 auto;
+      }
+      @content;
+    }
+  }
+} */
+
+@mixin container($point, $mrn) {
+  @if $point == mobile {
+    width: 100%;
+    @content;
+  }
+  @else if $point == tablet {
+    @media (min-width: 768px) {
+      max-width: 1100px;
+      @if $mrn == true {
+        margin: 0 auto;
+      }
+      @content;
+    }
+  }
+  @else if $point == desktop {
+    @media (min-width: 1300px) {
+      max-width: 1300px;
+      @if $mrn == true {
+        margin: 0 auto;
+      }
+      @content;
+    }
   }
 }
 

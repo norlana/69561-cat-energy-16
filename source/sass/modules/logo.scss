@@ -6,14 +6,25 @@
   @include breakpoint(tablet) {
     width: 185px;
     padding: 0;
-    justify-content: space-between;
 
-    // Временно для няглядности
+    // Временно для наглядности
     &::before {
       @include pseudo($pos: static);
       width: 173px;
       height: 58px;
-      background-image: url("../../img/header/logo-tablet.svg");
+      background: url("../img/header/logo-tablet.svg") no-repeat;
+    }
+  }
+
+  @include breakpoint(desktop) {
+    width: 202px;
+
+    // Временно для наглядности
+    &::before {
+      @include pseudo($pos: static);
+      width: 202px;
+      height: 59px;
+      background: url("../img/header/logo-desktop.svg") no-repeat;
     }
   }
 

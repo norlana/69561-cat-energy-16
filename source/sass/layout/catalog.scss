@@ -1,11 +1,30 @@
 .catalog {
-  @include container(mobile);
+  @include container(mobile, false) {
+    padding: $mob-pad;
+  }
 
+  @include container(tablet, true) {
+    padding: $tab-pad;
+  }
+
+  @include container(desktop, false) {
+    padding: $desk-pad;
+  }
+}
+
+.catalog__wrapper {
   @include breakpoint(tablet) {
-    @include container(tablet);
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
-    margin: 0 auto;
+    justify-content: flex-start;
+
+    @media (max-width: 920px) {
+      justify-content: space-between;
+      margin-left: 0;
+    }
+  }
+
+  @include breakpoint(desktop) {
+    margin-left: -80px;
   }
 }

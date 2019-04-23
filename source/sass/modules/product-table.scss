@@ -3,15 +3,35 @@
   display: table;
   border-collapse: collapse;
   width: 100%;
+
+  @media (min-width: 500px) and (max-width: 619px) {
+    max-width: 200px;
+  }
+
+  @media (min-width: 620px) and (max-width: 767px) {
+    max-width: 280px;
+  }
+
+  @include breakpoint(tablet) {
+    @include change-font-prop(0, 16px, 16px);
+  }
 }
 
 .product-table__row {
   display: table-row;
+
+  @include breakpoint(tablet) {
+    border-bottom: 1px solid $pc-neutral-ultra;
+  }
 }
 
 .product-table__cell {
   display: table-cell;
-  width: 70%;
+  width: 50%;
+
+  @include breakpoint(tablet) {
+    padding: 8px 0;
+  }
 }
 
 .product-table__cell--value {
