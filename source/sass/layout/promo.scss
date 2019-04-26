@@ -4,18 +4,26 @@
   color: $tc-light;
   margin-bottom: 60px;
   padding-top: 10px;
-  background: url("../img/bg-image/index-background-mobile@1x.jpg") no-repeat, linear-gradient(to bottom, #63a73a 305px, transparent 305px) no-repeat;
-  background-position: center top, 0 0;
+  background-image: url("../img/bg-image/index-background-mobile@1x.jpg"), linear-gradient(to bottom, #64a83b 88px, #65a93c 98px, #65a93c 250px, #66aa3d 260px, #66aa3d 305px, transparent 305px), linear-gradient(to bottom, #63a73a 305px, transparent 305px);
+  background-repeat: no-repeat;
+  background-position: center top, 0 top, 0 0;
+  background-size: 320px 305px, 50% 305px, 100% 100%;
+
+  @include resolution {
+    background-image: url("../img/bg-image/index-background-mobile@2x.jpg"), linear-gradient(to bottom, #64a83b 88px, #65a93c 98px, #65a93c 250px, #66aa3d 260px, #66aa3d 305px, transparent 305px), linear-gradient(to bottom, #63a73a 305px, transparent 305px);
+  }
 
   @include breakpoint(tablet) {
     @include font-secondary(400, 20px, 20px);
     color: $tc-dark;
     background-color: $pc-base;
     background-image: none;
+    margin-bottom: 0;
+    padding-top: 60px;
   }
 
   @include breakpoint(desktop) {
-    padding-top: 66px;
+    padding-top: 0;
     background: linear-gradient(to right, $pc-base 50%, transparent 50%);
   }
 }
@@ -31,12 +39,12 @@
     flex-direction: column;
     padding: $tab-pad;
     z-index: 1;
-    min-height: 550px;
   }
 
   @include container(desktop, false) {
     flex-direction: row;
-    padding: $desk-pad;
+    padding: 32px 40px 0;
+    min-height: 696px;
   }
 }
 
@@ -47,10 +55,11 @@
   @include breakpoint(tablet) {
     max-width: 420px;
     text-align: left;
-    margin: 0 0 45px 90px;
+    margin: 0 0 20px 90px;
   }
 
   @include breakpoint(desktop) {
+    padding-top: 78px;
     margin: 0 0 0 82px;
   }
 }
@@ -60,7 +69,7 @@
 
   @include breakpoint(tablet) {
     @include change-font-prop(400, 60px, 60px);
-    margin-bottom: 45px;
+    margin: 0 0 45px;
   }
 }
 
@@ -75,19 +84,26 @@
 
 .promo__image {
   padding-bottom: 4px;
+  width: 280px;
+  height: 270px;
 
   @include breakpoint(tablet) {
+    width: 709px;
+    height: 609px;
+  }
+
+  @include breakpoint(desktop) {
     position: absolute;
-    bottom: 0;
-    left: 50%;
-    margin-left: -140px;
-    order: 3;
-    z-index: -1;
+    left: 490px;
+    width: 552px;
+    height: 499px;
   }
 }
 
 .promo__button {
   @include breakpoint(tablet) {
+    position: absolute;
+    top: 236px;
     padding: 15px 27px;
     width: 245px;
     margin: 0 0 45px 90px;
@@ -95,7 +111,7 @@
 
   @include breakpoint(desktop) {
     position: absolute;
-    top: 270px;
+    top: 340px;
     left: 123px;
     margin: 0;
   }

@@ -4,28 +4,8 @@
   padding: 11px 51px 16px 20px;
 
   @include breakpoint(tablet) {
-    width: 185px;
+    width: 300px;
     padding: 0;
-
-    // Временно для наглядности
-    &::before {
-      @include pseudo($pos: static);
-      width: 173px;
-      height: 58px;
-      background: url("../img/header/logo-tablet.svg") no-repeat;
-    }
-  }
-
-  @include breakpoint(desktop) {
-    width: 202px;
-
-    // Временно для наглядности
-    &::before {
-      @include pseudo($pos: static);
-      width: 202px;
-      height: 59px;
-      background: url("../img/header/logo-desktop.svg") no-repeat;
-    }
   }
 
   &[href]:active {
@@ -38,9 +18,14 @@
   width: 33px;
   height: 38px;
 
-  // Временно для наглядности
   @include breakpoint(tablet) {
-    display: none;
+    width: 173px;
+    height: 58px;
+  }
+
+  @include breakpoint(desktop) {
+    width: 202px;
+    height: 59px;
   }
 }
 
