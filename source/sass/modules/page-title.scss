@@ -10,13 +10,12 @@
     @include change-font-prop(0, 60px, 0);
     padding: 0 30px;
     max-width: 1100px;
-    margin: 0 auto 125px;
+    margin: 0 auto;
     box-shadow: none;
   }
 
   @include breakpoint(desktop) {
     padding: 0 40px;
     max-width: 1300px;
-    // width: 1300px;
   }
 }
