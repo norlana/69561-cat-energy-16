@@ -1,15 +1,13 @@
 .logo {
-  display: flex;
-  align-items: center;
-  padding: 11px 51px 16px 20px;
-
-  @include breakpoint(tablet) {
-    width: 300px;
-    padding: 0;
-  }
-
   &[href]:active {
     opacity: 0.6;
+  }
+
+  @include breakpoint(desktop) {
+    &[href]:hover,
+    &[href]:focus {
+      opacity: 0.8;
+    }
   }
 }
 

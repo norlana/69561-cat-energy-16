@@ -1,0 +1,64 @@
+.button {
+  text-transform: uppercase;
+  text-align: center;
+  display: inline-block;
+  vertical-align: top;
+  width: 100%;
+  border: none;
+  box-shadow: none;
+  outline: none;
+  cursor: pointer;
+
+  &--normal,
+  &--normal-to-large {
+    @include font-secondary(400, 16px, 20px);
+    padding: 10px 21px 10px 23px;
+  }
+
+  &--small-to-large {
+    @include font-secondary(400, 14px, 18px);
+    padding: 11px 22px;
+  }
+
+  @include breakpoint(tablet) {
+    &--small-to-large,
+    &--normal-to-large {
+      @include change-font-prop(0, 20px, 20px);
+      padding: 15px 22px 17px 18px;
+    }
+  }
+}
+
+.button--accent {
+  background-color: $pc-accent;
+  color: $tc-light;
+
+  &:active {
+    background-color: $pc-accent-darker;
+    color: rgba($tc-light, 0.3);
+  }
+
+  @include breakpoint(desktop) {
+    &:hover,
+    &:focus {
+      background-color: $pc-accent-darker;
+    }
+  }
+}
+
+.button--neutral {
+  background-color: $pc-neutral;
+  color: $tc-base;
+
+  &:active {
+    background-color: $pc-neutral-darker;
+    color: rgba($tc-base, 0.3);
+  }
+
+  @include breakpoint(desktop) {
+    &:hover,
+    &:focus {
+      background-color: $pc-neutral-darker;
+    }
+  }
+}

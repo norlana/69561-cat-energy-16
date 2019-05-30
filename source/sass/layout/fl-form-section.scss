@@ -1,0 +1,352 @@
+.form-section {
+  padding: 0 0 28px;
+
+  & fieldset {
+    margin: 0;
+    padding: 0;
+    border: none;
+  }
+
+  @include breakpoint(tablet) {
+    padding: 35px 0 32px;
+  }
+}
+
+.form-section--cat-data {
+  @include breakpoint(tablet) {
+    padding: 0 0 40px;
+  }
+
+  @include breakpoint(desktop) {
+    padding: 35px 0;
+
+    .form-section__wrapper {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+}
+
+.form-section--owner-data {
+  .form-section__row {
+    position: relative;
+  }
+
+  @include breakpoint(desktop) {
+    .form-section__group {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .form-section__row {
+      width: 570px;
+      margin: 0;
+    }
+  }
+}
+
+.form-section--addition {
+  @include breakpoint(tablet) {
+    .form-section__group {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    .form-section__row {
+      margin-bottom: 0;
+      width: 290px;
+
+      @media (max-width: 1299px) {
+        &:nth-child(-n+2) {
+          margin-bottom: 32px;
+        }
+      }
+    }
+
+    .form-section__title {
+      margin-bottom: 20px;
+    }
+  }
+
+  @include breakpoint(desktop) {
+    padding-bottom: 60px;
+
+    .form-section__group {
+      justify-content: flex-start;
+      margin-left: -80px;
+    }
+
+    .form-section__row {
+      max-width: 245px;
+      margin-left: 80px;
+    }
+
+    .form-section__title {
+      margin-bottom: 22px;
+    }
+  }
+}
+
+.form-section__wrapper {
+  @include container($tabpad: 0 66px 0 70px);
+}
+
+.form-section__title {
+  margin: 0 0 32px;
+
+  @include small-heading($ff: false);
+  text-transform: none;
+  background-image: linear-gradient(to bottom, $pc-base 13px, $pc-accent 13px, $pc-accent 16px, $pc-base 16px);
+
+  & span {
+    display: inline-block;
+    vertical-align: top;
+    padding: 0 23px 0 20px;
+    background: $pc-base;
+  }
+
+  &--long {
+    & span {
+      @media (max-width: 767px) {
+        max-width: 222px;
+        padding-right: 0;
+      }
+    }
+  }
+
+  @include breakpoint(tablet) {
+    margin-bottom: 40px;
+    background-image: linear-gradient(to bottom, $pc-base 23px, $pc-accent 23px, $pc-accent 26px, $pc-base 26px);
+
+    & span {
+      margin-left: 29px;
+      padding: 0 40px 0;
+    }
+  }
+
+  @include breakpoint-range(1100px, 1299px) {
+    & span {
+      margin-left: calc((100% - 1042px) / 2);
+    }
+  }
+
+  @include breakpoint(desktop) {
+    & span {
+      margin-left: calc((100% - 1300px) / 2);
+    }
+  }
+}
+
+.form-section__group {
+  @include list-reset;
+
+  @include breakpoint(tablet) {
+    padding: 35px 0 0;
+  }
+}
+
+.form-section__group--data {
+  padding-bottom: 22px;
+
+  @include breakpoint(tablet) {
+    padding-bottom: 72px;
+  }
+
+  @include breakpoint(desktop) {
+    width: 570px;
+    padding: 0;
+  }
+}
+
+.form-section__group--target {
+  border-width: 1px 0 1px 0;
+  border-style: solid;
+  border-color: rgba(#cdcdcd, 0.5);
+  padding: 22px 0 22px 20px;
+
+  @media (max-width: 767px) {
+    margin: 0 -20px;
+  }
+
+  @include breakpoint(tablet) {
+    padding: 24px 0 24px 27px;
+    border-width: 1px;
+  }
+
+  @include breakpoint(desktop) {
+    width: 570px;
+  }
+}
+
+.form-section__row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+
+  &--switch {
+    margin-bottom: 13px;
+  }
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+
+  @include breakpoint(tablet) {
+    margin-bottom: 20px;
+
+    &--switch {
+      margin-bottom: 13px;
+    }
+  }
+}
+
+.form-section__field {
+  flex: 1 0;
+  margin-left: 14px;
+  padding: 6px 14px 6px;
+  height: 45px;
+  width: 100%;
+  color: $tc-base;
+  border: 1px solid transparent;
+
+  @include shadow-border(1px, $pc-neutral);
+  outline: 0;
+
+  &--textarea {
+    margin-left: 0;
+    height: 150px;
+    padding: 14px 13px;
+  }
+
+  &::placeholder {
+    @include font-secondary(400, 16px, 18px);
+    text-transform: uppercase;
+    color: $tc-base;
+    opacity: 1;
+  }
+
+  &:focus {
+    @include shadow-border(2px, $pc-darkest);
+  }
+
+  &--error-no-js:focus:invalid,
+  &--error-js,
+  &--error-js:focus:invalid {
+    @include shadow-border(2px, $pc-accent-error);
+  }
+
+  @include breakpoint(tablet) {
+    padding: 6px 18px 6px;
+    margin-left: 18px;
+    height: 52px;
+
+    &--textarea {
+      margin-left: 0;
+      height: 174px;
+      padding: 15px 17px;
+    }
+
+    &::placeholder {
+      @include change-font-prop(0, 20px, 30px);
+    }
+  }
+
+  @include breakpoint(desktop) {
+    &:hover {
+      @include shadow-border(1px, $pc-neutral-darker);
+    }
+
+    &:focus:hover {
+      @include shadow-border(2px, $pc-darkest);
+    }
+
+    &--error-js:focus:hover,
+    &--error-js:hover {
+      @include shadow-border(2px, $pc-accent-error);
+    }
+  }
+}
+
+[type="radio"] + .form-section__label,
+[type="checkbox"] + .form-section__label {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-basis: 100%;
+
+  &::before {
+    @include pseudo($pos: static);
+    width: 30px;
+    height: 30px;
+    background: $pc-base;
+    border: 1px solid $pc-neutral-darker;
+    margin-right: 16px;
+    margin-left: 1px;
+  }
+
+  @include breakpoint(tablet) {
+    &::before {
+      width: 40px;
+      height: 40px;
+      margin-right: 19px;
+    }
+  }
+
+  @include breakpoint(desktop) {
+    &:hover::before {
+      border-color: $pc-neutral-darkest;
+    }
+
+    &:active {
+      opacity: 0.3;
+    }
+  }
+}
+
+[type="radio"] {
+  & + .form-section__label::before {
+    border-radius: 50%;
+  }
+
+  &:checked + .form-section__label::before {
+    background: $pc-accent;
+    box-shadow: inset 0 0 0 8px $pc-base;
+  }
+
+  @include breakpoint(tablet) {
+    &:checked + .form-section__label::before {
+      box-shadow: inset 0 0 0 10px $pc-base;
+    }
+  }
+}
+
+[type="checkbox"]:checked + .form-section__label::before {
+  background: url("../img/icons-svg/icon-tick.svg") no-repeat;
+  background-size: 21px 16px;
+  background-position: center;
+}
+
+.form-section__icon {
+  position: absolute;
+  display: block;
+  top: 50%;
+  right: 14px;
+  width: 20px;
+  transform: translateY(-50%);
+
+  @include breakpoint(tablet) {
+    right: 18px;
+  }
+}
+
+.form-section__field:focus + .form-section__icon {
+  fill: $pc-accent;
+}
+
+.form-section__field--error-no-js:required:focus:invalid + .form-section__icon,
+.form-section__field--error-js + .form-section__icon,
+.form-section__field--error-js:focus + .form-section__icon {
+  fill: $pc-accent-error;
+}

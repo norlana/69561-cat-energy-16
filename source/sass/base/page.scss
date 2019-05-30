@@ -1,12 +1,12 @@
 .page--index {
   @include breakpoint(desktop) {
-    background-image: url("../img/bg-image/index-background-desktop@1x.jpg"), linear-gradient(to right, $pc-accent-darkest 50%, $pc-accent-darkest 50%);
+    background-image: url("../img/bg-image/index-background-desktop@1x.jpg"), linear-gradient(to right, #64a83b 50%, #64a83b 50%);
     background-repeat: no-repeat;
     background-position: top right, 100% 0;
     background-size: 720px 696px, 100% 696px;
 
     @include resolution {
-      background-image: url("../img/bg-image/index-background-desktop@2x.jpg"), linear-gradient(to right, $pc-accent-darkest 50%, $pc-accent-darkest 50%);
+      background-image: url("../img/bg-image/index-background-desktop@2x.jpg"), linear-gradient(to right, #64a83b 50%, #64a83b 50%);
     }
   }
 }

@@ -6,36 +6,45 @@
 
   @include breakpoint(tablet) {
     display: flex;
-    justify-content: flex-end;
-    padding-top: 17px;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    padding-top: 18px;
 
     @include change-font-prop(400, 18px, 25px);
   }
 
   @include breakpoint(desktop) {
     @include change-font-prop(400, 20px, 25px);
+    width: 480px;
   }
 }
 
-.menu__item + .menu__item {
+.menu__item:not(:last-child) {
   @include breakpoint(tablet) {
-    margin-left: 38px;
+    margin-right: 35px;
   }
 }
 
 .menu__link {
-  @include shadow-border-top($pc-neutral-darkest);
+  @include shadow-border-top;
   display: block;
   padding: 23px 20px 23px;
   color: $tc-dark;
 
-  @include breakpoint(tablet) {
-    box-shadow: none;
-    padding: 0 0 14px;
-  }
-
   &[href]:active {
     opacity: 0.3;
+  }
+
+  @include breakpoint(tablet) {
+    box-shadow: none;
+    padding: 0 0 10px;
+  }
+
+  @include breakpoint(desktop) {
+    &[href]:not(:active):hover,
+    &[href]:not(:active):focus {
+      opacity: 0.6;
+    }
   }
 }
 

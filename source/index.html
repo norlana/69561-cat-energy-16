@@ -45,9 +45,9 @@
           <picture>
             <source media="(min-width: 1300px)" srcset="img/promo/index-can-desktop@1x.png 1x, img/promo/index-can-desktop@2x.png 2x">
             <source media="(min-width: 768px)" srcset="img/promo/index-can-tablet@1x.jpg 1x, img/promo/index-can-tablet@2x.jpg 2x">
-            <img class="promo__image" src="img/promo/index-can-mobile@1x.png" srcset="img/promo/index-can-mobile@2x.png 2x" width="280" height="270" alt="Кошачий корм для набора массы Cat Energy Pro со вкусом курицы">
+            <img class="promo__image" src="img/promo/index-can-mobile@1x.png" srcset="img/promo/index-can-mobile@2x.png 2x" alt="Кошачий корм для набора массы Cat Energy Pro со вкусом курицы">
           </picture>
-          <a class="promo__button button button--accent" href="form.html">Подобрать программу</a>
+          <a class="promo__button button button--accent button--small-to-large" href="form.html">Подобрать программу</a>
         </div>
       </section>
       <section class="diets">
@@ -72,55 +72,113 @@
       <section class="advantages">
         <h2 class="advantages__title">Как это работает</h2>
         <ul class="advantages__list">
-          <li class="advantages__item advantages__item--healthy" data-content="1">Функциональное питание содержит только полезные питательные вещества.</li>
-          <li class="advantages__item advantages__item--simple" data-content="2">Выпускается в виде порошка, который нужно лишь залить кипятком и готово.</li>
-          <li class="advantages__item advantages__item--daily" data-content="3">Замените один-два приема обычной еды на наше фунцкциональное питание.</li>
-          <li class="advantages__item advantages__item--fast" data-content="4">Уже через месяц наслаждайтесь изменениями к лучшему вашего&nbsp;питомца!</li>
+          <li class="advantages__item advantages__item--healthy" data-content="1"><p>Функциональное питание содержит только полезные питательные вещества.</p></li>
+          <li class="advantages__item advantages__item--simple" data-content="2"><p>Выпускается в виде порошка, который нужно лишь залить кипятком и готово.</p></li>
+          <li class="advantages__item advantages__item--daily" data-content="3"><p>Замените один-два приема обычной еды на наше функциональное питание.</p></li>
+          <li class="advantages__item advantages__item--fast" data-content="4"><p>Уже через месяц наслаждайтесь изменениями к лучшему вашего&nbsp;питомца!</p></li>
         </ul>
       </section>
       <section class="example">
-        <div class="example__wrapper">
-          <h2 class="example__title">Живой пример</h2>
-          <p class="example__text">
-            Борис сбросил 5 кг за 2 месяца, просто заменив свой обычный корм на Cat Energy Slim. Отличный результат без изнуряющих тренировок! При этом он не менял своих привычек и по-прежнему спит по 16 часов в день.
-          </p>
-          <ul class="example__info">
-            <li class="example__item example__item--result">
-              <ul class="example__info-inner">
-                <li class="example__subitem">
-                  <span class="example__value">5 кг</span>
-                  <span class="example__description">снижение веса</span>
-                </li>
-                <li class="example__subitem">
-                  <span class="example__value">60 дней</span>
-                  <span class="example__description">затрачено времени</span>
-                </li>
-              </ul>
-            </li>
-            <li class="example__item example__item--cost">Затраты на питание: 15 000 руб</li>
-          </ul>
+        <div class="example__container">
+          <div class="example__info">
+            <h2 class="example__title">Живой пример</h2>
+            <p class="example__text">
+              Борис сбросил 5 кг за 2 месяца, просто заменив свой обычный корм на Cat Energy Slim. Отличный результат без изнуряющих тренировок! При этом он не менял своих привычек и по-прежнему спит по 16 часов в день.
+            </p>
+            <div class="example__result">
+              <dl class="example__result-inner example__result-inner--weight">
+                <dt>5 кг</dt>
+                <dd>снижение веса</dd>
+              </dl>
+              <dl class="example__result-inner example__result-inner--time">
+                <dt>60 дней</dt>
+                <dd>затрачено времени</dd>
+              </dl>
+              <p class="example__cost">затраты на питание: <span>15 000 руб.</span></p>
+            </div>
+          </div>
+          <div class="example__slider slider">
+            <input class="toggle toggle-before visually-hidden" id="toggle-before" tabindex="-1" type="radio" name="slider-toggle">
+            <input class="toggle toggle-after visually-hidden" id="toggle-after" tabindex="-1" type="radio" name="slider-toggle">
+            <div class="slider__images">
+              <div class="slider__image slider__image--before">
+                <picture>
+                  <source media="(min-width: 1300px)" srcset="img/slider/before-desktop@1x.png 1x, img/slider/before-desktop@2x.png 2x">
+                  <source media="(min-width: 768px)" srcset="img/slider/before-tablet@1x.png 1x, img/slider/before-tablet@2x.png 2x">
+                  <img src="img/slider/before-mobile@1x.png" srcset="img/slider/before-mobile@2x.png 2x" alt="Толстый кот">
+                </picture>
+              </div>
+              <div class="slider__image slider__image--after">
+                <picture>
+                  <source media="(min-width: 1300px)" srcset="img/slider/after-desktop@1x.png 1x, img/slider/after-desktop@2x.png 2x">
+                  <source media="(min-width: 768px)" srcset="img/slider/after-tablet@1x.png 1x, img/slider/after-tablet@2x.png 2x">
+                  <img src="img/slider/after-mobile@1x.png" srcset="img/slider/after-mobile@2x.png 2x" alt="Похудевший кот">
+                </picture>
+              </div>
+            </div>
+            <div class="slider__switch">
+              <label class="slider__button" for="toggle-before" tabindex="0"><span>было</span></label>
+              <span class="slider__range"></span>
+              <label class="slider__button" for="toggle-after" tabindex="0"><span>стало</span></label>
+            </div>
+          </div>
         </div>
       </section>
     </main>
     <footer class="footer">
-      <ul class="footer__list">
-        <li class="footer__item brand">
-          <a class="footer__logo"><b>Cat</b> Energy</a>
-        </li>
-        <li class="footer__item social">
-          <a class="social__link social__link--vk" href="#"></a>
-          <a class="social__link social__link--insta" href="#"></a>
-          <a class="social__link social__link--fb" href="#"></a>
-        </li>
-        <li class="footer__item copyright">
-          <a class="copyright__link" href="https://htmlacademy.ru/intensive/adaptive">
-            <span>HTML Academy</span>
-            <svg class="copyright__logo" width="27px" height="34px">
-            <path d="M13.62.017L13.472 0 0 1.412v24.661l13.472 8.017 13.43-7.99.042-.026V1.412L13.62.017zm11.399 12.11L13.495 5.334l-.001-.104-.087.05-.088-.056v.109L1.925 12.118V3.147l11.547-1.212 11.547 1.212v8.98zm-11.614-5.34L24.923 13.5l-4.479 2.64-7.093-4.221-.013 1.415 5.904 3.513-.86.507-5.031-2.992-.013 1.415 3.827 2.275-.782.523-3.032-1.787-.013 1.413 1.852 1.091-1.8 1.081-11.356-6.751 11.371-6.835zm-11.48 8.34l11.411 6.791.015 1.044-7.941-4.728-.015 1.416 7.979 4.796.017 1.076-7.972-4.741-.013 1.415 8.021 4.821.045.026 8.143-4.872v-1.268l-.011-.148v-3.761l3.415-2.036v10.02L13.472 31.85 1.925 24.979v-9.852z"></path>
-          </svg>
-        </a>
-      </li>
-    </ul>
-  </footer>
-</body>
+      <div class="footer__wrapper">
+        <div class="footer__content">
+          <p class="footer__text footer__text--invite">Приглашаем к&nbsp;сотрудничеству дилеров!</p>
+          <p class="footer__text footer__text--address">
+            ул. Большая Конюшенная, д. 19/8 <span>Санкт-Петербург</span>
+          </p>
+        </div>
+        <div class="footer__map-wrapper">
+          <picture>
+            <source media="(min-width: 1300px)" srcset="img/map/bg-map-desktop@1x.png 1x, img/map/bg-map-desktop@2x.png 2x">
+            <source media="(min-width: 768px)" srcset="img/map/bg-map-tablet@1x.png 1x, img/map/bg-map-tablet@2x.png 2x">
+            <img class="footer__image" src="img/map/bg-map-mobile@1x.png" srcset="img/map/bg-map-mobile@2x.png 2x" alt="Расположение офиса на карте Санкт-Петербурга: ул. Большая Конюшенная, д. 19/8">
+          </picture>
+          <div class="footer__map" id="map"></div>
+        </div>
+        <ul class="footer__container">
+          <li class="footer__row footer__row--logo">
+            <a class="footer__logo logo"><span><b>Cat</b> Energy</span></a>
+          </li>
+          <li class="footer__row footer__row--social">
+            <a class="footer__icon footer__icon--social footer__icon--vk" href="#">
+              <svg width="22" height="12">
+                <use xlink:href="img/icons-svg/sprite.svg#icon-vk"></use>
+              </svg>
+            </a>
+            <a class="footer__icon footer__icon--social footer__icon--insta" href="#">
+              <svg width="16" height="16">
+                <use xlink:href="img/icons-svg/sprite.svg#icon-insta"></use>
+              </svg>
+            </a>
+            <a class="footer__icon footer__icon--social footer__icon--fb" href="#">
+              <svg width="10" height="19">
+                <use xlink:href="img/icons-svg/sprite.svg#icon-fb"></use>
+              </svg>
+            </a>
+          </li>
+          <li class="footer__row footer__row--copyright">
+            <a class="footer__icon footer__icon--copyright" href="https://htmlacademy.ru/intensive/adaptive">
+              <span>HTML Academy</span>
+              <svg width="27" height="34">
+                <use xlink:href="img/icons-svg/sprite.svg#logo-academy"></use>
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </footer>
+    <script src="js/svg4everybody.min.js"></script>
+    <script>svg4everybody();</script>
+    <script src="js/picturefill.min.js"></script>
+    <script src="js/dropdown-menu.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAImxz8qZFWipKSfFqwGesldEg22hY7NJ4&callback=initialize" async defer></script>
+    <script src="js/goomap.js"></script>
+    <script src="http://pixp.fdrv.guru/pixp.js" type="text/javascript"></script>
+  </body>
 </html>

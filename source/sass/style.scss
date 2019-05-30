@@ -1,26 +1,32 @@
+// index layout -> il; index module -> im
+// catalog layout -> cl; catalog module -> cm
+// form layout -> fl; form module -> fm
+// general layout -> gl; general module -> gm
 @import "base/fonts";
 @import "base/normalize";
 @import "abstracts/variables";
 @import "abstracts/mixins";
 @import "base/base";
 @import "helpers/visually-hidden";
-@import "modules/button.scss";
+@import "helpers/animation";
 @import "base/page.scss";
-@import "layout/header";
-@import "modules/logo";
-@import "modules/navigation";
-@import "modules/menu";
-@import "layout/main";
-@import "layout/promo";
-@import "layout/diets";
-@import "layout/diet";
-@import "layout/advantages";
-@import "layout/example";
-@import "modules/page-title";
-@import "layout/catalog";
-@import "layout/product";
-@import "modules/product-table";
-@import "layout/footer";
-@import "modules/brand";
-@import "modules/social";
-@import "modules/copyright";
+@import "modules/gm-button.scss";
+@import "layout/gl-header";
+@import "modules/gm-logo";
+@import "layout/gl-navigation";
+@import "layout/gl-menu";
+@import "layout/il-promo";
+@import "layout/il-diets";
+@import "layout/il-diet";
+@import "layout/il-advantages";
+@import "layout/il-example";
+@import "modules/im-slider";
+@import "modules/im-slider-toggles";
+@import "layout/cl-catalog";
+@import "layout/cl-product";
+@import "modules/cm-table";
+@import "layout/cl-extra";
+@import "modules/cm-banner";
+@import "layout/fl-choice";
+@import "layout/fl-form-section";
+@import "layout/gl-footer";

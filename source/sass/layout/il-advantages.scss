@@ -1,25 +1,13 @@
 .advantages {
-  @include container(mobile, false) {
-    padding: 0 20px 40px;
-  }
-
-  @include container(tablet, true) {
-    padding: $tab-pad;
-  }
-
-  @include container(desktop, false) {
-    padding: $desk-pad;
-  }
+  @include container(0 20px 40px, 0 30px 0, 38px 40px 18px);
 }
 
 .advantages__title {
-  @include font-secondary(400, 36px, 60px);
-  margin-top: 0;
-  color: $tc-dark;
+  @include large-heading;
+  margin: 0 0 29px;
 
   @include breakpoint(tablet) {
-    @include change-font-prop(0, 60px, 60px);
-    margin-bottom: 62px;
+    margin-bottom: 42px;
   }
 }
 
@@ -30,11 +18,12 @@
 
   @include breakpoint(tablet) {
     flex-direction: row;
-    justify-content: space-between;
     flex-wrap: wrap;
+    justify-content: space-between;
 
     @media (max-width: 1299px) {
-      padding-right: calc(100% - 87%);
+      padding-right: 25px;
+      padding-bottom: 50px;
       min-width: 620px;
       max-width: 850px;
     }
@@ -52,6 +41,15 @@
   min-height: 60px;
   margin-bottom: 20px;
 
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  & p {
+    padding: 0;
+    margin: 0;
+  }
+
   @media (max-width: 600px) {
     padding: 0 25% 0 80px;
   }
@@ -60,21 +58,6 @@
     padding: 0 0 0 80px;
   }
   z-index: 1;
-
-  @include breakpoint(tablet) {
-    @include change-font-prop(0, 16px, 24px);
-    display: flex;
-    flex-shrink: 0;
-    flex-basis: 250px;
-    padding: 115px 5px 80px 0;
-    margin-bottom: 60px;
-  }
-
-  @include breakpoint(desktop) {
-    flex-basis: 245px;
-    margin-left: 80px;
-    padding-right: 0;
-  }
 
   &::before {
     @include pseudo;
@@ -86,11 +69,6 @@
     background-repeat: no-repeat;
     background-position: 50%;
     background-size: 50px;
-
-    @include breakpoint(tablet) {
-      width: 80px;
-      height: 80px;
-    }
   }
 
   &--healthy::before {
@@ -125,22 +103,46 @@
     }
   }
 
-  &::after {
-    @include breakpoint(tablet) {
+  &--healthy::after {
+    right: 20px;
+  }
+
+  @include breakpoint(tablet) {
+    @include change-font-prop(0, 16px, 24px);
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    width: 300px;
+    padding: 30px 50px 0 0;
+    min-height: 265px;
+    margin-bottom: 0;
+
+    @media (max-width: 1299px) {
+      &:nth-child(-n+2) {
+        margin-bottom: 53px;
+      }
+    }
+
+    &::before {
+      position: static;
+      margin-bottom: 30px;
+      width: 80px;
+      height: 80px;
+    }
+
+    &::after {
       @include pseudo(attr(data-content));
       @include font-secondary(400, 282px, 282px);
-      top: -40px;
-      right: 0;
-      color: $pc-neutral;
+      top: -10px;
+      left: 116px;
+      color: $pc-dark;
       z-index: -1;
     }
   }
 
-  &--healthy::after {
-    right: 20px;
+  @include breakpoint(desktop) {
+    flex-basis: 245px;
+    margin-left: 80px;
+    padding-right: 0;
   }
-}
-
-.advantages__item:last-child {
-  margin-bottom: 0;
 }

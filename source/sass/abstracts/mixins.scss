@@ -1,12 +1,54 @@
 /* stylelint-disable */
 
 // Типографика
+// Arial
 @mixin font-base($size: 14px, $line-height: 18px) {
-  font: 400 #{$size}/#{$line-height} Arial, sans-serif;
+  font: 400 #{$size}/#{$line-height} "Arial", sans-serif;
 }
 
+// Oswald
 @mixin font-secondary($weight: 400, $size: 16px, $line-height: 20px) {
-  font: $weight #{$size}/#{$line-height} Oswald, Arial, sans-serif;
+  font: $weight #{$size}/#{$line-height} "Oswald", "Arial", sans-serif;
+}
+
+// Крупный заголовок
+@mixin large-heading($lht: 60px, $color: true, $ff: true) {
+  @if $ff != true {
+    font-weight: 400;
+    font-size: 36px;
+    line-height: $lht;
+  } @else {
+    font: 400 36px/#{$lht} "Oswald", "Arial", sans-serif;
+  }
+
+  @if $color == true {
+    color: $tc-dark;
+  }
+
+  @media (min-width: 768px) {
+    font-size: 60px;
+    line-height: 60px;
+  }
+}
+
+// Маленький заголовок
+@mixin small-heading($lht: 24px, $color: true, $ff: true) {
+  @if $ff != true {
+    font-weight: 400;
+    font-size: 24px;
+    line-height: $lht;
+  } @else {
+    font: 400 24px/#{$lht} "Oswald", "Arial", sans-serif;
+  }
+
+  @if $color == true {
+    color: $tc-dark;
+  }
+
+  @media (min-width: 768px) {
+    font-size: 36px;
+    line-height: 36px;
+  }
 }
 
 // Изменить некоторые свойства текста
@@ -36,49 +78,43 @@
 }
 
 // Центровщик
-@mixin container($point, $mrn) {
-  @if $point == mobile {
-    width: 100%;
-    @content;
-  }
-  @else if $point == tablet {
-    @media (min-width: 768px) {
-      max-width: 1100px;
-      @if $mrn == true {
-        margin: 0 auto;
-      }
-      @content;
+@mixin container($mobpad: 0 20px, $tabpad: 0 30px, $deskpad: 0 40px, $auto: true) {
+  width: 100%;
+  padding: $mobpad;
+
+  @media (min-width: 768px) {
+    max-width: 1100px;
+    padding: $tabpad;
+
+    @if $auto == true {
+      margin: 0 auto;
     }
   }
-  @else if $point == desktop {
-    @media (min-width: 1300px) {
-      max-width: 1300px;
-      @if $mrn == true {
-        margin: 0 auto;
-      }
-      @content;
-    }
+
+  @media (min-width: 1300px) {
+    max-width: 1300px;
+    padding: $deskpad;
   }
 }
 
 // Обводка блоков
 // Сверху
-@mixin shadow-border-top($color: #d9d9d9) {
-  box-shadow: inset 0 1px 0 0 $color;
+@mixin shadow-border-top($y: 1px, $color: $pc-neutral) {
+  box-shadow: inset 0 $y 0 0 $color;
 }
 
 // Снизу
-@mixin shadow-border-bottom($y: -1px, $color: #d9d9d9) {
+@mixin shadow-border-bottom($y: -1px, $color: $pc-neutral) {
   box-shadow: inset 0 $y 0 0 $color;
 }
 
 // Со всех сторон
-@mixin shadow-border($y: 1px, $color: #d9d9d9) {
+@mixin shadow-border($y: 1px, $color: $pc-neutral) {
   box-shadow: inset 0 0 0 $y $color;
 }
 
 // Псевдоэлементы
-@mixin pseudo($content: '', $display: block, $pos: absolute) {
+@mixin pseudo($content: "", $display: block, $pos: absolute) {
     content: $content;
     display: $display;
     position: $pos;
