@@ -1,0 +1,12 @@
+.diets {
+  @include container($mobpad: 0 20px 17px, $tabpad: 0 30px 45px, $deskpad: 0 40px 40px);
+}
+
+// Обертка добавлена для обхода бага IE11: в раскладке flex учитываются элементы absolute
+.diets__wrapper {
+  @include breakpoint(desktop) {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}

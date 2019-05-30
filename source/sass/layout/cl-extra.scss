@@ -1,0 +1,86 @@
+.extra {
+  padding-top: 29px;
+  padding-bottom: 35px;
+
+  @include breakpoint(tablet) {
+    padding-bottom: 77px;
+  }
+
+  @include breakpoint(desktop) {
+    padding-bottom: 84px;
+    padding-top: 18px;
+  }
+}
+
+.extra__wrapper {
+  @include container;
+
+  @include breakpoint(tablet) {
+    padding-top: 46px;
+  }
+
+  @include breakpoint(desktop) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+}
+
+.extra__list {
+  @include list-reset;
+  margin-bottom: 39px;
+  border-bottom: 1px solid $pc-neutral-darker;
+
+  @include breakpoint(tablet) {
+    margin-bottom: 68px;
+    border: 1px solid $pc-neutral;
+    border-top-color: transparent;
+  }
+
+  @include breakpoint(desktop) {
+    margin-bottom: 0;
+    border-left: 0;
+    border-right: 0;
+    border-bottom-color: $pc-neutral-darker;
+    width: 895px;
+  }
+}
+
+.extra__title {
+  @include small-heading;
+  margin: 0;
+  padding-bottom: 33px;
+  background-image: linear-gradient(to bottom, $pc-base 13px, $pc-accent 13px, $pc-accent 16px, $pc-base 16px);
+
+  & span {
+    display: inline-block;
+    vertical-align: top;
+    padding: 0 23px 0 20px;
+    background: $pc-base;
+  }
+
+  @include breakpoint(tablet) {
+    background-image: linear-gradient(to bottom, $pc-base 23px, $pc-accent 23px, $pc-accent 26px, $pc-base 26px);
+
+    & span {
+      margin-left: 28px;
+      padding: 0 40px 0;
+    }
+  }
+
+  @include breakpoint-range(1100px, 1299px) {
+    & span {
+      margin-left: calc((100% - 1042px) / 2);
+    }
+  }
+
+  @include breakpoint(desktop) {
+    & span {
+      margin-left: calc((100% - 1300px) / 2);
+    }
+  }
+}
+
+.extra-banner {
+  margin: 0 auto;
+}

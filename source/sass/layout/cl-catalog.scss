@@ -1,0 +1,36 @@
+.catalog {
+  @include container(14px 20px 0, 58px 30px 38px, 76px 40px 54px);
+}
+
+.catalog__title {
+  @include large-heading;
+  padding-bottom: 29px;
+  margin: 0;
+
+  @media (max-width: 767px) {
+    margin: 0 -20px;
+    padding-left: 20px;
+    border-bottom: 1px solid $pc-neutral-lighter;
+  }
+}
+
+.catalog__wrapper {
+  @include breakpoint(tablet) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    padding-top: 54px;
+
+    @media (max-width: 920px) {
+      justify-content: space-between;
+    }
+
+    @include breakpoint-range(921px, 1299px) {
+      margin-left: calc((-1 * (100% - 270px * 3) / 2));
+    }
+  }
+
+  @include breakpoint(desktop) {
+    margin-left: -80px;
+  }
+}

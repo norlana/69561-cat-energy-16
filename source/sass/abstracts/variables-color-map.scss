@@ -1,0 +1,59 @@
+// Внутренние переменные ($variable-inner -> $vi)
+// Градация основана на hsl параметре lightness % (чем больше число, тем светлее)
+$pc-base: #ffffff;
+
+$pc-dark: #f2f2f2;
+$pc-darker: #eaeaea;
+$pc-darkest: #444444;
+$pc-dark-ultra: #222222;
+
+$pc-neutral: #e6e6e6;
+$pc-neutral-lighter: #ededed;
+$pc-neutral-dark: #d9d9d9; // mobile diet line
+$pc-neutral-darker: #cdcdcd;
+$pc-neutral-darkest: #bababa;
+
+$pc-accent: #68b738;
+$pc-accent-darker: #5eaa2f;  // button hover
+
+// Цвет текста ($text-color -> $tc)
+$tc-base: #444444;
+$tc-dark: #111111;
+$tc-light: #ffffff;
+
+// Семейство шрифтов ($font-family -> $ff)
+$ff-base: "Arial", sans-serif;
+
+$ff-second: "Oswald", "Arial", sans-serif;
+
+// container paddings
+$mob-pad: 0 20px;
+$tab-pad: 0 30px;
+$desk-pad: 0 40px;
+
+// Retina
+$retina-dpi: 144dpi;
+$retina-dppx: 1.5dppx;
+
+/* // Удалить
+// Глобальные переменные
+// Цветовая палитра сайта ($page-color -> $pc)
+$pc-base: $vi-color-white;
+$pc-neutral: $vi-color-gray;
+$pc-neutral-darker: $vi-darker-gray;
+$pc-neutral-darkest: $vi-darkest-gray;
+$pc-neutral-ultra: $vi-ultra-gray;
+$pc-accent: $vi-green;
+$pc-accent-darker: $vi-green-darker; */
+
+/* // Внутренние переменные ($variable-inner -> $vi)
+$vi-white: #ffffff;
+$vi-green: #68b738;
+$vi-green-darker: #5eaa2f;
+$vi-green-darkest: #64a83b;
+$vi-gray: #f2f2f2;
+$vi-darker-gray:#ebebeb;
+$vi-darkest-gray: #e6e6e6;
+$vi-ultra-gray: #d9d9d9;
+$vi-black-medium: #444444;
+$vi-black-ultra: #111111; */

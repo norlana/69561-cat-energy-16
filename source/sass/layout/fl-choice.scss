@@ -1,0 +1,86 @@
+.choice {
+  @include font-secondary(400, 16px, 18px);
+  text-transform: uppercase;
+  color: #222222;
+  padding-bottom: 30px;
+
+  @include breakpoint(tablet) {
+    @include change-font-prop(0, 20px, 20px);
+    padding-bottom: 38px;
+  }
+
+  @include breakpoint(desktop) {
+    padding-bottom: 50px;
+  }
+}
+
+.choice__header {
+  @include container(14px 20px 39px, 58px 30px 30px, 75px 40px 30px);
+}
+
+.choice__title {
+  @include large-heading($ff: false);
+  margin: 0 0 25px;
+  text-transform: none;
+
+  @include breakpoint(tablet) {
+    margin: 0 0 55px;
+  }
+}
+
+.choice__intro {
+  @include change-font-prop(0, 14px, 0);
+  margin: 0;
+  max-width: 250px;
+
+  @include breakpoint(tablet) {
+    @include change-font-prop(0, 20px, 30px);
+    max-width: 380px;
+
+    @media (max-width: 1299px) {
+      padding-left: 40px;
+    }
+  }
+}
+
+.choice__footer {
+  @include container($mobpad: 8px 20px 0, $tabpad: 22px 66px 0 70px);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  @include breakpoint(tablet) {
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.choice__button {
+  margin-bottom: 22px;
+
+  @include breakpoint(tablet) {
+    margin-bottom: 0;
+    padding: 16px 22px;
+    width: 283px;
+  }
+
+  @include breakpoint(desktop) {
+    width: 568px;
+  }
+}
+
+.choice__note {
+  @include font-base($line-height: 16px);
+  text-transform: none;
+
+  @include breakpoint(tablet) {
+    @include change-font-prop(0, 16px, 0);
+    width: 288px;
+    // padding-bottom: 20px;
+  }
+
+  @include breakpoint(desktop) {
+    width: 568px;
+  }
+}

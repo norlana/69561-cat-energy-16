@@ -2,19 +2,23 @@
 <html lang="ru">
   <head>
     <meta charset="utf-8">
-    <title>HTML Academy: Кэт энерджи</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>HTML Academy: Кэт энерджи</title>
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body class="page">
     <header class="header">
       <div class="header__wrapper">
         <a class="header__logo logo" href="index.html">
-          <img class="logo__item logo__item--image" src="img/header/logo-mobile.svg" width="33" height="38" alt="Логотип Cat Energy">
+          <picture>
+            <source media="(min-width: 1300px)" srcset="img/header/logo-desktop.svg">
+            <source media="(min-width: 768px)" srcset="img/header/logo-tablet.svg">
+            <img class="logo__item logo__item--image" src="img/header/logo-mobile.svg" width="33" height="38" alt="Логотип Cat Energy">
+          </picture>
           <span class="logo__item logo__item--title"><b>Cat</b> Energy</span>
         </a>
-        <nav class="navigation">
-          <button class="navigation__toggle navigation__toggle--close" type="button" aria-label="Меню">
+        <nav class="navigation navigation--no-js">
+          <button class="navigation__toggle" type="button" aria-label="Меню">
           <span class="navigation__toggle-bar"></span>
           </button>
           <ul class="navigation__list menu">
@@ -31,27 +35,167 @@
         </nav>
       </div>
     </header>
-    <main class="main">
+    <main class="main main--form">
+      <form class="choice" name="choice" action="https://echo.htmlacademy.ru" method="post">
+        <div class="choice__header">
+          <h1 class="choice__title">Подбор программы</h1>
+          <p class="choice__intro">Заполните анкету и мы подберем программу питания для вашего кота</p>
+        </div>
+        <section class="form-section form-section--cat-data">
+          <div class="form-section__wrapper">
+            <h2 class="visually-hidden">Персональная анкета питомца</h2>
+            <ul class="form-section__group form-section__group--data">
+              <li class="form-section__row">
+                <label class="form-section__label" for="name"><span>Имя:*</span></label>
+                <input class="form-section__field form-section__field--error-no-js" id="name" name="name" type="text" placeholder="Барсик" pattern="([A-Za-zА-Яа-яЁё\s]+$)" autocomplete="name" data-validate required>
+              </li>
+              <li class="form-section__row">
+                <label class="form-section__label" for="weight"><span>Вес (кг):*</span></label>
+                <input class="form-section__field form-section__field--error-no-js" id="weight" name="weight" type="number" min="1" max="99" step="1" placeholder="7" data-validate required>
+              </li>
+              <li class="form-section__row">
+                <label class="form-section__label" for="age"><span>Возраст (лет):</span></label>
+                <input class="form-section__field field" id="age" type="number" placeholder="7">
+              </li>
+            </ul>
+            <fieldset>
+              <legend class="visually-hidden">Цель диеты</legend>
+              <ul class="form-section__group form-section__group--target">
+                <li class="form-section__row form-section__row--switch">
+                  <input class="visually-hidden" id="weight-loss" name="target" value="Похудение" type="radio" checked>
+                  <label class="form-section__label" for="weight-loss"><span>Похудение</span></label>
+                </li>
+                <li class="form-section__row form-section__row--switch">
+                  <input class="visually-hidden" id="weight-gain" name="target" value="Набор массы" type="radio">
+                  <label class="form-section__label" for="weight-gain"><span>Набор массы</span></label>
+                </li>
+                <li class="form-section__row form-section__row--switch">
+                  <input class="visually-hidden" id="need-advice" name="target" value="Не знаю" type="radio">
+                  <label class="form-section__label" for="need-advice"><span>Не знаю (нужен ваш совет)</span></label>
+                </li>
+              </ul>
+            </fieldset>
+          </div>
+        </section>
+        <section class="form-section form-section--owner-data">
+          <h2 class="form-section__title form-section__title--long"><span>Контактные данные (владельца кота)</span></h2>
+          <div class="form-section__wrapper">
+            <ul class="form-section__group">
+              <li class="form-section__row form-section__row--relative">
+                <label class="form-section__label" for="email"><span>E-mail:*</span></label>
+                <input class="form-section__field form-section__field--error-no-js" id="email" name="email" type="email" placeholder="kuklachev@gmail.com" pattern="([A-z0-9_.-]{1,})@([A-z0-9_.-]{1,}).([A-z]{2,8})" autocomplete="email" data-validate required>
+                <svg class="form-section__icon" width="17px" height="13px">
+                  <use xlink:href="img/icons-svg/sprite.svg#icon-mail"></use>
+                </svg>
+              </li>
+              <li class="form-section__row form-section__row--relative">
+                <label class="form-section__label" for="phone"><span>Телефон:*</span></label>
+                <input class="form-section__field form-section__field--error-no-js" id="phone" name="phone" type="tel" placeholder="8 (960) 900-60-90" pattern="(^(\+7|7|8)?[\s\-]?\(?[489][0-9]{2}\)?[\s\-]?[0-9]{3}[\s\-]?[0-9]{2}[\s\-]?[0-9]{2}$)" autocomplete="tel" required>
+                <svg class="form-section__icon" width="20px" height="20px">
+                  <use xlink:href="img/icons-svg/sprite.svg#icon-phone"></use>
+                </svg>
+              </li>
+            </ul>
+          </div>
+        </section>
+        <section class="form-section form-section--comment">
+          <h2 class="form-section__title"><span>Комментарий</span></h2>
+          <div class="form-section__wrapper">
+            <ul class="form-section__group">
+              <li>
+                <label class="visually-hidden" for="comment-field">Добавьте комментарий</label>
+                <textarea class="form-section__field form-section__field--textarea" id="comment-field" name="comment" placeholder="Расскажите обо всех повадках кота"></textarea>
+              </li>
+            </ul>
+          </div>
+        </section>
+        <section class="form-section form-section--addition">
+          <h2 class="form-section__title"><span>Дополнительно</span></h2>
+          <div class="form-section__wrapper">
+            <fieldset>
+              <legend class="visually-hidden">Добавить продукт</legend>
+              <ul class="form-section__group">
+                <li class="form-section__row form-section__row--switch">
+                  <input class="visually-hidden" id="sweetener" name="addition[]" value="Сахарозаменитель" type="checkbox" checked>
+                  <label class="form-section__label" for="sweetener">Сахарозаменитель</label>
+                </li>
+                <li class="form-section__row form-section__row--switch">
+                  <input class="visually-hidden" id="water" name="addition[]" value="Питьевая вода" type="checkbox">
+                  <label class="form-section__label" for="water">Питьевая вода</label>
+                </li>
+                <li class="form-section__row form-section__row--switch">
+                  <input class="visually-hidden" id="milk" name="addition[]" value="Молоко" type="checkbox">
+                  <label class="form-section__label" for="milk">Молоко</label>
+                </li>
+                <li class="form-section__row form-section__row--switch">
+                  <input class="visually-hidden" id="vitamins" name="addition[]" value="Витамины" type="checkbox">
+                  <label class="form-section__label" for="vitamins">Витамины</label>
+                </li>
+              </ul>
+            </fieldset>
+          </div>
+        </section>
+        <div class="choice__footer">
+          <button class="choice__button button button--accent button--normal-to-large" type="submit">Отправить заявку</button>
+          <span class="choice__note">* — Обязательные поля</span>
+        </div>
+      </form>
     </main>
-    <footer class="footer">
-      <ul class="footer__list">
-        <li class="footer__item brand">
-          <a class="footer__logo" href="index.html"><b>Cat</b> Energy</a>
-        </li>
-        <li class="footer__item social">
-          <a class="social__link social__link--vk" href="#"></a>
-          <a class="social__link social__link--insta" href="#"></a>
-          <a class="social__link social__link--fb" href="#"></a>
-        </li>
-        <li class="footer__item copyright">
-          <a class="copyright__link" href="https://htmlacademy.ru/intensive/adaptive">
-            <span>HTML Academy</span>
-            <svg class="copyright__logo" width="27px" height="34px">
-            <path d="M13.62.017L13.472 0 0 1.412v24.661l13.472 8.017 13.43-7.99.042-.026V1.412L13.62.017zm11.399 12.11L13.495 5.334l-.001-.104-.087.05-.088-.056v.109L1.925 12.118V3.147l11.547-1.212 11.547 1.212v8.98zm-11.614-5.34L24.923 13.5l-4.479 2.64-7.093-4.221-.013 1.415 5.904 3.513-.86.507-5.031-2.992-.013 1.415 3.827 2.275-.782.523-3.032-1.787-.013 1.413 1.852 1.091-1.8 1.081-11.356-6.751 11.371-6.835zm-11.48 8.34l11.411 6.791.015 1.044-7.941-4.728-.015 1.416 7.979 4.796.017 1.076-7.972-4.741-.013 1.415 8.021 4.821.045.026 8.143-4.872v-1.268l-.011-.148v-3.761l3.415-2.036v10.02L13.472 31.85 1.925 24.979v-9.852z"></path>
-          </svg>
-        </a>
-      </li>
-    </ul>
-  </footer>
-</body>
+    <footer class="footer footer--colored">
+      <div class="footer__wrapper">
+        <div class="footer__content footer__content--colored">
+          <p class="footer__text footer__text--invite">Приглашаем к&nbsp;сотрудничеству дилеров!</p>
+          <p class="footer__text footer__text--address">
+            ул. Большая Конюшенная, д. 19/8 <span>Санкт-Петербург</span>
+          </p>
+        </div>
+        <div class="footer__map-wrapper">
+          <picture>
+            <source media="(min-width: 1300px)" srcset="img/map/bg-map-desktop@1x.png 1x, img/map/bg-map-desktop@2x.png 2x">
+            <source media="(min-width: 768px)" srcset="img/map/bg-map-tablet@1x.png 1x, img/map/bg-map-tablet@2x.png 2x">
+            <img class="footer__image" src="img/map/bg-map-mobile@1x.png" srcset="img/map/bg-map-mobile@2x.png 2x" alt="Расположение офиса на карте Санкт-Петербурга: ул. Большая Конюшенная, д. 19/8">
+          </picture>
+          <div class="footer__map" id="map"></div>
+        </div>
+        <ul class="footer__container">
+          <li class="footer__row footer__row--logo">
+            <a class="footer__logo logo" href="index.html"><span><b>Cat</b> Energy</span></a>
+          </li>
+          <li class="footer__row footer__row--social">
+            <a class="footer__icon footer__icon--social footer__icon--vk" href="#">
+              <svg width="22" height="12">
+                <use xlink:href="img/icons-svg/sprite.svg#icon-vk"></use>
+              </svg>
+            </a>
+            <a class="footer__icon footer__icon--social footer__icon--insta" href="#">
+              <svg width="16" height="16">
+                <use xlink:href="img/icons-svg/sprite.svg#icon-insta"></use>
+              </svg>
+            </a>
+            <a class="footer__icon footer__icon--social footer__icon--fb" href="#">
+              <svg width="10" height="19">
+                <use xlink:href="img/icons-svg/sprite.svg#icon-fb"></use>
+              </svg>
+            </a>
+          </li>
+          <li class="footer__row footer__row--copyright">
+            <a class="footer__icon footer__icon--copyright" href="https://htmlacademy.ru/intensive/adaptive">
+              <span>HTML Academy</span>
+              <svg width="27" height="34">
+                <use xlink:href="img/icons-svg/sprite.svg#logo-academy"></use>
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </footer>
+    <script src="js/svg4everybody.min.js"></script>
+    <script>svg4everybody();</script>
+    <script src="js/picturefill.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAImxz8qZFWipKSfFqwGesldEg22hY7NJ4&callback=initialize" async defer></script>
+    <script src="js/goomap.js"></script>
+    <script src="js/dropdown-menu.js"></script>
+    <script src="js/choice-form.js"></script>
+    <script src="http://pixp.fdrv.guru/pixp.js" type="text/javascript"></script>
+  </body>
 </html>

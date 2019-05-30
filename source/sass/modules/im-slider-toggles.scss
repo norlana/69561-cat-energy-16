@@ -1,0 +1,27 @@
+.toggle {
+  display: none;
+}
+
+.toggle-before:checked ~ .slider__images .slider__image--before,
+.toggle-after:checked ~ .slider__images .slider__image--after {
+  width: 100%;
+}
+
+.toggle-before:checked ~ .slider__images .slider__image--after,
+.toggle-after:checked ~ .slider__images .slider__image--before {
+  width: 0;
+}
+
+.toggle-after:checked ~ .slider__buttons .slider__switch::before {
+  transform: translateX(36px);
+
+  @include breakpoint(tablet) {
+    transform: translateX(206px);
+  }
+}
+
+.toggle-before:checked ~ .slider__buttons .slider__switch::before {
+  @include breakpoint(tablet) {
+    transform: translateX(-206px);
+  }
+}
